@@ -13,7 +13,7 @@ describe 'workstation::default' do
 
   describe file ('/etc/motd') do
     it {should be_file}
-    its(:content) {should match /Property of Cheffffco/}
+    its(:content) {should match /Property of Chefco/}
     it {should be_owned_by 'root'}
   end
 
