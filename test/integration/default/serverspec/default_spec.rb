@@ -7,4 +7,14 @@ describe 'workstation::default' do
     it {should be_installed}
   end
 
+  describe package('vim') do
+    it {should be_installed}
+  end
+
+  describe file ('etc/motd') do
+    it {should be_file}
+    its(:content) {should match /Property of Chefco/}
+    it {should be_owned_by 'root'}
+  end
+
 end
